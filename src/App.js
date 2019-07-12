@@ -35,28 +35,17 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <ReactSearchBox
-        placeholder="Nut"
-        value="Doe"
-        data={this.data}
-        callback={record => console.log(record)}
-        inputBoxFontColor="red"
-        inputBoxFontSize="10"
-      />
+         
       <header className="App-header">
-        
-        <p>
-          More like Cole is the hacker man!
 
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <ReactSearchBox 
+         placeholder="Tacos"
+          value="Doe"
+          data={this.data}
+         callback={record => console.log(record)}
+          inputBoxFontColor="black"
+          inputBoxFontSize="10"
+        />
       </header>
       
     </div>
