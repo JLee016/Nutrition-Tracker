@@ -35,9 +35,12 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-         
-      <header className="App-header">
-
+        
+      <header className="App-Title">
+      <h1>Whats the Nuts?</h1>
+      </header>
+      <header className="App-Search">
+      
       <ReactSearchBox 
          placeholder="Tacos"
           value="Doe"
