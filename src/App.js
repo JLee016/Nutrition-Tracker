@@ -5,35 +5,36 @@ import ReactSearchBox from 'react-search-box';
 
 class App extends Component {
 
-  // constructor(props) {
-  //   super(props);
-  // }
+  constructor(props) {
+    super(props);
 
-    data = [
-      {
-        key: 'john',
-        value: 'John Doe',
-      },
-      {
-        key: 'jane',
-        value: 'Jane Doe',
-      },
-      {
-        key: 'mary',
-        value: 'Mary Phillips',
-      },
-      {
-        key: 'robert',
-        value: 'Robert',
-      },
-      {
-        key: 'karius',
-        value: 'Karius',
-      },
-    ]
+    this.state = {
+      items: [],
+      search: ''
+    };
+  }
+
+  componentDidMount() {
+    fetch('https://api.nal.usda.gov/ndb/search/?format=json&api_key=s5X3RsKUcx0NHSRUjNpusgTGlQIDC6NwiUK7sBCU').then(results => {
+      return results.json();
+    }).then(data => {
+      let stuff = data.results.map((other) => {
+        return {
+
+        }
+      })
+      this.setState({items: stuff});
+      console.log(this.state.items);
+    })
+  }
+
+  changeHandler = (event) => {
+    this.setState({...this.state, [event.target.name]: event.target.value})
+  }
 
   render() {
     return (
+
       <div className="App-Background">
         <div className="row">
           <div className="col">
@@ -41,19 +42,13 @@ class App extends Component {
           </div>
         </div>
         <div className="row App-Search">
-          <ReactSearchBox 
-             placeholder="Tacos"
-              value="Doe"
-              data={this.data}
-              callback={record => console.log(record)}
-              inputBoxFontColor="black"
-              inputBoxFontSize="10"
-  />
-          </div>  
-
-      
-      
-    </div>
+      <form>
+        <div className="col" id="stats-SearchBar">
+          <input className="form-control" Value={this.state.Search} onChange={this.changeHandler} name='Search' label="Search"/>
+        </div>
+      </form>
+          </div> 
+</div>
     );
   }
 }
