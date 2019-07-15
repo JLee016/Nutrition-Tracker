@@ -34,15 +34,21 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
 
+      <div className="App-Background">
+        <div className="row">
+          <div className="col">
+            Whats the nuts?
+          </div>
+        </div>
+        <div className="row App-Search">
       <form>
         <div className="col" id="stats-SearchBar">
           <input className="form-control" Value={this.state.Search} onChange={this.changeHandler} name='Search' label="Search"/>
         </div>
       </form>
-
-    </div>
+          </div> 
+</div>
     );
   }
 }
