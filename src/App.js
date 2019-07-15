@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import './App.css';
-import ReactSearchBox from 'react-search-box';
+
 
 class App extends Component {
 
@@ -42,13 +42,13 @@ class App extends Component {
           </div>
         </div>
         <div className="row App-Search">
-      <form>
-        <div className="col" id="stats-SearchBar">
-          <input className="form-control" Value={this.state.Search} onChange={this.changeHandler} name='Search' label="Search"/>
-        </div>
-      </form>
-          </div> 
-</div>
+          <form>
+            <div className="col" id="stats-SearchBar">
+              <input className="form-control" Value={this.state.Search} onChange={this.changeHandler} name='Search' label="Search"/>
+            </div>
+          </form>
+        </div> 
+      </div>
     );
   }
 }
