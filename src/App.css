@@ -1,29 +1,22 @@
-.App {
+.App-Background {
   text-align: center;
+  color:white;
+  background-color: #223b6e;
 }
 
 
 
-.App-header {
-  background-color: #282c34;
+.App-Search {
+  background-color: #223b6e;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  margin-top: 2em;
+  
 }
 
 .App-link {
   color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }

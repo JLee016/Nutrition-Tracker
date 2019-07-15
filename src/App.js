@@ -34,19 +34,24 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-         
-      <header className="App-header">
+      <div className="App-Background">
+        <div className="row">
+          <div className="col">
+            Whats the nuts?
+          </div>
+        </div>
+        <div className="row App-Search">
+          <ReactSearchBox 
+             placeholder="Tacos"
+              value="Doe"
+              data={this.data}
+              callback={record => console.log(record)}
+              inputBoxFontColor="black"
+              inputBoxFontSize="10"
+  />
+          </div>  
 
-      <ReactSearchBox 
-         placeholder="Tacos"
-          value="Doe"
-          data={this.data}
-         callback={record => console.log(record)}
-          inputBoxFontColor="black"
-          inputBoxFontSize="10"
-        />
-      </header>
+      
       
     </div>
     );
