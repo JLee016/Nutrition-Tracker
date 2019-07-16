@@ -15,17 +15,10 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch('https://api.nal.usda.gov/ndb/search/?format=json&api_key=s5X3RsKUcx0NHSRUjNpusgTGlQIDC6NwiUK7sBCU').then(results => {
-      return results.json();
-    }).then(data => {
-      let stuff = data.results.map((other) => {
-        return {
-
-        }
-      })
-      this.setState({items: stuff});
+    fetch('https://api.nal.usda.gov/ndb/search/?format=json&api_key=s5X3RsKUcx0NHSRUjNpusgTGlQIDC6NwiUK7sBCU')
+      .then(results => results.json())
+      .then(data => this.setState({items: data}));
       console.log(this.state.items);
-    })
   }
 
   changeHandler = (event) => {
@@ -44,10 +37,10 @@ class App extends Component {
         <div className="row App-Search">
           <form>
             <div className="col" id="stats-SearchBar">
-              <input className="form-control" Value={this.state.Search} onChange={this.changeHandler} name='Search' label="Search"/>
+              <input className="form-control" value={this.state.Search} onChange={this.changeHandler} name='Search' label="Search"/>
             </div>
           </form>
-        </div> 
+        </div>
       </div>
     );
   }
