@@ -15,6 +15,7 @@ class App extends Component {
   }
 
   componentDidMount() {
+    console.log("hey");
     fetch('https://api.nal.usda.gov/ndb/search/?format=json&api_key=s5X3RsKUcx0NHSRUjNpusgTGlQIDC6NwiUK7sBCU')
       .then(results => results.json())
       .then(data => this.setState({items: data}));
@@ -37,7 +38,7 @@ class App extends Component {
         <div className="row App-Search">
           <form>
             <div className="col" id="stats-SearchBar">
-              <input className="form-control" value={this.state.Search} onChange={this.changeHandler} name='Search' label="Search"/>
+              <input className="form-control" value={this.state.Search} onChange={this.changeHandler} name='Search' label="Search" placeholder="Search..."/>
             </div>
           </form>
         </div>
