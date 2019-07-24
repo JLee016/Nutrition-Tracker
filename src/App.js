@@ -18,7 +18,8 @@ class App extends Component {
     console.log("hey");
     fetch('https://api.nal.usda.gov/ndb/search/?format=json&api_key=s5X3RsKUcx0NHSRUjNpusgTGlQIDC6NwiUK7sBCU')
       .then(results => results.json())
-      .then(data => this.setState({items: data}));
+      //.then(data => console.log(data));
+      .then(data => this.setState({items: data.list.item}));
       console.log(this.state.items);
   }
 
