@@ -15,11 +15,19 @@ class App extends Component {
   }
 
   componentDidMount() {
-    console.log("hey");
     fetch('https://api.nal.usda.gov/ndb/search/?format=json&api_key=s5X3RsKUcx0NHSRUjNpusgTGlQIDC6NwiUK7sBCU')
-      .then(results => results.json())
-      //.then(data => console.log(data));
-      .then(data => this.setState({items: data.list.item}));
+      .then((res) => res.json())
+      .then(function(data) {
+        console.log(data.list.item);
+        this.setState({items: data.list.item});
+        //this.items = data.list.item;
+      })
+      .catch(function(error) {
+        console.log(error);
+      })
+      //.then(results => console.log(results));
+      //.then(res => this.setState({items: res.list.item}));
+      //.then(this.items = results.list.item);
       console.log(this.state.items);
   }
 
@@ -29,7 +37,6 @@ class App extends Component {
 
   render() {
     return (
-
       <div className="App-Background">
         <div className="row">
           <div className="col">
